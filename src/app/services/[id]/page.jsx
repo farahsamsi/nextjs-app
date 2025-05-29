@@ -1,7 +1,8 @@
-import Link from "next/link";
 import React from "react";
 
-export default function ServicesPage() {
+export default function ServiceDetailPage({ params }) {
+  const id = params.id;
+
   const services = [
     {
       _id: "1",
@@ -45,22 +46,14 @@ export default function ServicesPage() {
     },
   ];
 
+  const singleData = services.find((d) => d._id == id);
+
   return (
     <div>
-      <p className="font-bold text-4xl">Services Page</p>
-      <div className="grid grid-cols-3 gap-4">
-        {services.map((service) => (
-          <div>
-            <Link href={`/services/${service._id}`}>
-              <img
-                className="w-full h-full object-cover"
-                src={service.service_image}
-                alt=""
-              />
-            </Link>
-          </div>
-        ))}
-      </div>
+      <h1>Service Details Page</h1>
+      <p>ID: {id}</p>
+      <p>{singleData.service_name}</p>
+      <img src={singleData.service_image} alt="" />
     </div>
   );
 }
