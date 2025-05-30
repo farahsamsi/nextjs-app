@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ServiceDetailPage({ params }) {
-  const id = params.id;
+  const id = params?.id;
 
   const services = [
     {
