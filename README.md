@@ -78,3 +78,20 @@ Important Notes:
 - It only returns the pathname (not query parameters or hash).
 
 - If you're using the Pages Router (/pages), you should use useRouter() instead.
+
+## Layout in Next.js
+
+using file name as 'layout.jsx' inside an folder along with page.jsx make the layout of that specific different from the main layout.
+
+## Catch-all Segments : Dynamic Routes
+
+Dynamic Segments can be extended to catch-all subsequent segments by adding an ellipsis inside the brackets [...folderName].
+
+For example, `app/shop/[...slug]/page.js` will match /shop/clothes, but also `/shop/clothes/tops`, `/shop/clothes/tops/`t-shirts, and so on.
+
+```
+Route	Example URL	params
+app/shop/[...slug]/page.js	/shop/a	{ slug: ['a'] }
+app/shop/[...slug]/page.js	/shop/a/b	{ slug: ['a', 'b'] }
+app/shop/[...slug]/page.js	/shop/a/b/c	{ slug: ['a', 'b', 'c'] }
+```
