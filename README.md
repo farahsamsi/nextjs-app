@@ -95,3 +95,9 @@ app/shop/[...slug]/page.js	/shop/a	{ slug: ['a'] }
 app/shop/[...slug]/page.js	/shop/a/b	{ slug: ['a', 'b'] }
 app/shop/[...slug]/page.js	/shop/a/b/c	{ slug: ['a', 'b', 'c'] }
 ```
+
+## 404 Not found page
+
+the file has to be named as 'not-found' and must in the app folder.
+
+For dynamic routes validation is important to render 404 page

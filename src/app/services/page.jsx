@@ -49,8 +49,8 @@ export default function ServicesPage() {
     <div>
       <p className="font-bold text-4xl">Services Page</p>
       <div className="grid grid-cols-3 gap-4">
-        {services.map((service) => (
-          <div>
+        {services?.map((service) => (
+          <div key={service?._id}>
             <Link href={`/services/${service._id}`}>
               <img
                 className="w-full h-full object-cover"
